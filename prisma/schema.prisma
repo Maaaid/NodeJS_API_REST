@@ -1,0 +1,42 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+// Model = Table
+// Contenu = Lignes dans la table (exemple : description, title, city, etc..)
+model Event {
+  id Int @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  title String
+  description String
+  dateAndHour DateTime
+  place String
+  city String
+  billPrice Int
+  nbPlace Int
+  category String
+  coverImage Int
+}
+
+model User {
+  id Int @id @default(autoincrement())
+  createdAt DateTime  @default(now())
+  name String
+  email String @unique
+  role Role @default(USER)
+}
+
+enum Role {
+  USER
+  MANAGER
+}
