@@ -13,6 +13,6 @@ router.put("/:id", updateEvent)
 
 router.delete("/:id", deleteEvent)
 
-router.delete("/:id", deleteManyEvents)
+// router.delete("/:id", deleteManyEvents)
 
 export default router;

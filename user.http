@@ -1,0 +1,10 @@
+### GET request to example server
+GET http://localhost:3000/api/users
+
+###
+
+POST /api/users HTTP/1.1
+Host: localhost:3000
+Content-Type: application/json
+
+{}
